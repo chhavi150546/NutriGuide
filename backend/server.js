@@ -9,22 +9,27 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
+// middleware
+const logger = require("./middleware/logger");
+app.use(logger);
+
+// routes
+const mealRoutes = require("./routes/mealRoutes");
+const authRoutes = require("./routes/authRoutes");
+
+app.use("/api", mealRoutes);
+app.use("/api/auth", authRoutes);
+
 // simple endpoint
 app.get("/", (req, res) => {
     res.send("NutriGuide Backend Running");
 });
 
-const mealRoutes = require("./routes/mealRoutes");
+// error handler
+const errorHandler = require("./middleware/errorHandler");
+app.use(errorHandler);
 
-app.use("/api", mealRoutes);
-
+// server start (must be last)
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-const logger = require("./middleware/logger");
-
-app.use(logger);
-
-const errorHandler = require("./middleware/errorHandler");
-
-app.use(errorHandler);

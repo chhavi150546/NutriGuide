@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1772727705183,
+    "name": "Chandni",
+    "email": "chandni@gmail.com",
+    "password": "123456"
+  },
+  {
+    "id": 1772732047209,
+    "name": "vaani",
+    "email": "vaani12@gmail.com",
+    "password": "Chandni@2006"
+  },
+  {
+    "id": 1772732146089,
+    "name": "riya",
+    "email": "riya09@gmail.com",
+    "password": "234334"
+  },
+  {
+    "id": 1772733244879,
+    "name": "shreya",
+    "email": "shreya999@gmail.com",
+    "password": "shreya"
+  }
+]
